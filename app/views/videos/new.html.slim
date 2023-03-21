@@ -1,0 +1,11 @@
+.container
+  = form_with model: @video do |f|
+    form
+      .form-horizontal
+        .form-group
+          label.col-sm-2.control-label Youtube URL
+          .col-sm-10
+            = f.text_field :url, class: "form-control"
+        .form-group
+          .col-sm-offset-2.col-sm-10
+            = f.submit "Share", class: "btn btn-default share-video"

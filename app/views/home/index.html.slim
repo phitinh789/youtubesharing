@@ -1,0 +1,14 @@
+nav.navbar.navbar-default
+  .container
+    .navbar-header
+      .navbar-brand href="#"
+        .glyphicon.glyphicon-cloud aria-hidden="true"
+          span Funny Movies
+      - if current_user
+        = link_to "Share a movie", new_video_url, class: "btn btn-default navbar-btn"
+        = link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-default navbar-btn"
+      - else
+        = link_to "Login", user_session_path, class: "btn btn-default navbar-btn"
+
+.container
+  = render 'videos/index', videos: @videos
