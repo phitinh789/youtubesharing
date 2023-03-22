@@ -1,0 +1,6 @@
+<% if @video[:success] %>
+  window.location.replace("<%= root_path %>");
+<% else %>
+  $('.error').text("<%= @video[:message] %>")
+<% end %>
+

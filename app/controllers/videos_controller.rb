@@ -7,13 +7,10 @@ class VideosController < ApplicationController
   end
 
   def create
-    video = VideoCreateService.new(current_user, video_params).create
-    puts video[:success]
-    if video[:success]
-      flash[:alert] = "New video added"
-      return redirect_to :root
-    else
-      return render json: video
+    @video = VideoCreateService.new(current_user, video_params).create
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 
