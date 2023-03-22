@@ -5,7 +5,7 @@
         .embed-responsive.embed-responsive-16by9
           <iframe width="560" height="315" src="#{video.embed_url}" title="#{video.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       .col-md-6
-        .jumbotron
+        .jumbotron.videos-info-box
           h4= video.title
           .flex-items
             span= "Shared by: #{video.user.email}"

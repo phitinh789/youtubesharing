@@ -1,5 +1,5 @@
 class VideosController < ApplicationController
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
   before_action :get_video, only: [:vote]
 
   def new
@@ -8,11 +8,16 @@ class VideosController < ApplicationController
 
   def create
     video = VideoCreateService.new(current_user, video_params).create
-    redirect_to :root
+    puts video[:success]
+    if video[:success]
+      flash[:alert] = "New video added"
+      return redirect_to :root
+    else
+      return render json: video
+    end
   end
 
   def vote
-    @video
     vote = @video.votes.create!(
       vote_status: params[:vote_status],
       user_id: current_user.id

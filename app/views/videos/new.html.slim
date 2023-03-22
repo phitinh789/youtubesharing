@@ -1,11 +1,18 @@
 .container
-  = form_with model: @video do |f|
-    form
-      .form-horizontal
-        .form-group
-          label.col-sm-2.control-label Youtube URL
-          .col-sm-10
-            = f.text_field :url, class: "form-control"
-        .form-group
-          .col-sm-offset-2.col-sm-10
-            = f.submit "Share", class: "btn btn-default share-video"
+  .row
+    .col-md-2
+    .col-md-8
+      .jumbotron
+        h4 Share an Youtube movie
+        = form_with model: @video do |f|
+          form
+            .form-horizontal
+              .form-group
+                span.col-sm-3.control-label Youtube URL
+                .col-sm-9
+                  = f.text_field :url, class: "form-control"
+              .form-group
+                .col-sm-offset-3.col-sm-9
+                  = f.submit "Share", class: "btn btn-default share-video"
+    .col-md-2
+
