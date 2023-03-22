@@ -11,5 +11,9 @@ test:
   <<: *default
   database: youtubesharing_test
 
+
 production:
-  url: youtubesharing_prod
+  <<: *default
+  database: youtubesharing_prod
+  username: root
+  password: root
