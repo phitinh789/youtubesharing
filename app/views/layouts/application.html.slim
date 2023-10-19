@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+html
+  <head>
+    <title>Youtubesharing</title>
+    = csrf_meta_tags
+    = csp_meta_tag
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  </head>
+
+  body
+    nav.navbar.navbar-default
+      .container
+        .navbar-header
+          = link_to root_path, class: 'navbar-brand' do
+            .glyphicon.glyphicon-film aria-hidden="true"
+            span Funny Movies
+        .collapse.navbar-collapse#bs-example-navbar-collapse-1
+          form.navbar-form.navbar-left
+            .form-group
+              input.form-control type="text" placeholder="Search"
+          ul.nav.navbar-nav.navbar-right
+            - if current_user
+              li
+                = link_to "Share a movie", new_video_path
+              li.dropdown
+                a.dropdown-toggle href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
+                  span= current_user.email
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a Account
+                  li
+                    = link_to "Sign out", destroy_user_session_path, method: :delete
+            - else
+              li
+                = link_to "Sign in", user_session_path
+              li
+                = link_to "Sign up", new_user_registration_path
+  - flash.each do |type, msg|
+    .container
+      .alert.alert-info
+        = msg
+  = yield

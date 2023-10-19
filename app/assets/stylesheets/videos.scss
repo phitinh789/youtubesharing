@@ -1,0 +1,23 @@
+.videos-info-box{
+  min-height: 315px;
+  max-height: 315px
+}
+
+.vote-thums {
+  font-size:  25px;
+  margin-left: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+  &:hover{
+    color: red;
+  }
+}
+
+.flex-items {
+  display: flex;
+  align-items: center;
+}
+
+.glyphicon-thumbs-up, .error{
+  color: red
+}

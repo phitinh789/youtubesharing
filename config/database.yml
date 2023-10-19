@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: youtubesharing_dev
+
+test:
+  <<: *default
+  database: youtubesharing_test
+
+
+production:
+  <<: *default
+  database: youtubesharing_prod
+  username: root
+  password: root
