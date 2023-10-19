@@ -1,2 +1,4 @@
+/ = link_to 'Send Notification', root_path, remote: true
+=render partial: 'shared/notification'
 .container
   = render 'videos/index', videos: @videos

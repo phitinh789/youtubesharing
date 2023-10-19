@@ -8,6 +8,9 @@ class VideosController < ApplicationController
 
   def create
     @video = VideoCreateService.new(current_user, video_params).create
+    if @video[:success]
+      SendNotificationJob.perform_later(current_user.email, @video[:video].title)
+    end
     respond_to do |format|
       format.html
       format.js

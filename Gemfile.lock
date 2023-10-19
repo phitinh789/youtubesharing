@@ -80,6 +80,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.10)
+    connection_pool (2.4.1)
     crass (1.0.6)
     devise (4.9.0)
       bcrypt (~> 3.0)
@@ -195,6 +196,7 @@ GEM
     rb-fsevent (0.11.1)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    redis (4.8.1)
     regexp_parser (1.6.0)
     responders (3.1.0)
       actionpack (>= 5.2)
@@ -243,6 +245,10 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    sidekiq (6.5.12)
+      connection_pool (>= 2.2.5, < 3)
+      rack (~> 2.0)
+      redis (>= 4.5.0, < 5)
     slim (4.0.1)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 2.0.6, < 2.1)
@@ -291,6 +297,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actioncable
   bootsnap (>= 1.1.0)
   bootstrap-sass (~> 3.4.1)
   byebug
@@ -310,6 +317,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sassc-rails (>= 2.1.0)
   selenium-webdriver
+  sidekiq
   slim
   spring
   spring-watcher-listen (~> 2.0.0)

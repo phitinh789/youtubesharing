@@ -14,7 +14,7 @@ class VideoCreateService
       desc: @video.description,
       embed_url: @video.embed_url
     )
-    {success: true, message: nil, video: nil}
+    {success: true, message: nil, video: @current_user.videos.last}
   end
 
   def video
