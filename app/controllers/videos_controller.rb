@@ -8,6 +8,7 @@ class VideosController < ApplicationController
 
   def create
     @video = VideoCreateService.new(current_user, video_params).create
+    flash[:notice] = "Successfully share a link!"
     respond_to do |format|
       format.html
       format.js

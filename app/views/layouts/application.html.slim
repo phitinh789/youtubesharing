@@ -42,6 +42,7 @@ html
                 = link_to "Sign up", new_user_registration_path
   - flash.each do |type, msg|
     .container
-      .alert.alert-info
-        = msg
+      .container
+        .alert.alert-info
+          = msg
   = yield
