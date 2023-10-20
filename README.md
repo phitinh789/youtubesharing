@@ -58,6 +58,7 @@ So thats all the setup you need to do. Now, the YouTube Sharing App is up and ru
 * If you already have an account, click "Sign In" and enter your email and password to log in.
 
 **2. Share a YouTube Link**
+
 Once you are signed in, you can share a YouTube video link:
 * Click "Share a movie" in the navigation menu.
 * Enter the YouTube video URL in the provided field.
@@ -65,6 +66,7 @@ Once you are signed in, you can share a YouTube video link:
 * Your shared video will now be visible to other users.
 
 **3. Interact with Videos**
+
 You can browse and interact with shared videos:
 * Visit the homepage to see a list of shared videos.
 * You can up vote or down vote a video.
