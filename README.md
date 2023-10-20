@@ -17,3 +17,35 @@ Whenever you discover an fatastic movie, a hilarious comedy, or a beautiful musi
 * **Git:** You need Git installed, check using `git --version`.
 * **A Web Browser:** To view and interact with the app, you need a web browser like Google Chrome, Mozilla Firefox, or Safari.
 * **A Text Editor:** You need one to work on the app's code. Free to use any type of text editor which you goot at.
+
+## Installation & Configuration
+Follow these steps to set up the YouTube Sharing App on your local development environment.
+**1. Clone the Repository**
+```
+git clone https://github.com/phitinh789/youtubesharing.git
+```
+**2. Install Ruby Dependencies**
+```
+bundle install
+```
+**3. Configure the Database**
+```
+cp config/database.yml.example config/database.yml
+```
+Edit config/database.yml to match with your local database settings such as database name and login credentials.
+**4. Run Migrations**
+```
+rails db:migrate
+```
+**5. Start the Application**
+```
+rails server
+```
+Go to http://localhost:3000 in your web browser to see the app
+
+**6. Run Unit Tests**
+```
+rspec
+```
+
+So thats all the setup you need to do. Now, the YouTube Sharing App is up and running on your local machine. Just check the web browser and feel free to use the app.
