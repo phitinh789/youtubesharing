@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :videos do
     post :vote, on: :member
   end
+  resources :home, only: [:index]
   root 'home#index'
 end

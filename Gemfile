@@ -41,6 +41,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'faker'
   gem 'capybara'
+  gem 'rails-controller-testing'
 end
 
 #realtimenoti
