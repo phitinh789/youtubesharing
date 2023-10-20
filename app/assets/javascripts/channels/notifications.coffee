@@ -6,4 +6,8 @@ App.notifications = App.cable.subscriptions.create "NotificationsChannel",
     console.log('disconnected')
 
   received: (data) ->
-    alert(data)
+    $('#notificationModal .modal-body').html(data);
+    $('#notificationModal').addClass('popup-show');
+    setTimeout ->
+      $('#notificationModal').removeClass('popup-show')
+    , 20000
