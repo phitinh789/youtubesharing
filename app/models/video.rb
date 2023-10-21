@@ -9,6 +9,6 @@ class Video < ApplicationRecord
   after_create :send_noti_for_all_user_except_sender
 
   def send_noti_for_all_user_except_sender
-    SendNotificationJob.perform_later(user, title)
+    SendNotificationJob.perform_later(user, self)
   end
 end

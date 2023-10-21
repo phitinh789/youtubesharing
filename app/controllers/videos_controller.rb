@@ -1,6 +1,6 @@
 class VideosController < ApplicationController
   before_action :authenticate_user!
-  before_action :get_video, only: [:vote]
+  before_action :get_video, only: [:vote, :show]
 
   def new
     @video = current_user.videos.new
@@ -21,6 +21,9 @@ class VideosController < ApplicationController
       user_id: current_user.id
     )
     redirect_to :root
+  end
+
+  def show
   end
 
   protected

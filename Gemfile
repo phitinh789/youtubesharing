@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "2.7.8"
+ruby '2.5.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.5'
@@ -78,3 +78,5 @@ gem "devise", "~> 4.1"
 
 gem 'video_info'
 gem 'kaminari', '~> 1.2', '>= 1.2.2'
+
+gem "dockerfile-rails", ">= 1.5", :group => :development

@@ -1,0 +1,39 @@
+= render partial: 'shared/notification'
+.container
+  .row
+    .col-md-12
+      h3 Video details
+      hr
+    .col-md-6
+      .embed-responsive.embed-responsive-16by9
+        <iframe width="560" height="315" src="#{@video.embed_url}" title="#{@video.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    .col-md-6
+      .jumbotron.videos-info-box
+        h4= @video.title
+        .flex-items
+          span= "Shared by: #{@video.user.email}"
+          - if current_user
+            - if @video.vote_users.include?(current_user)
+              - if @video.votes.up_votes.pluck(:user_id).include?(current_user.id)
+                span.glyphicon.glyphicon-thumbs-down.vote-thums
+                span= "(voted down)"
+              - else
+                span.glyphicon.glyphicon-thumbs-up.vote-thums
+                span= "(voted up)"
+            - else
+              = link_to vote_video_url(@video, vote_status: 0), method: :post do
+                span.glyphicon.glyphicon-thumbs-down.vote-thums
+              = link_to vote_video_url(@video, vote_status: 1), method: :post do
+                span.glyphicon.glyphicon-thumbs-up.vote-thums
+              span= "(un-voted)"
+        p
+          .glyphicon.glyphicon-thumbs-down aria-hidden="true"
+            = @video.votes.up_votes.count
+          .glyphicon.glyphicon-thumbs-up aria-hidden="true"
+            = @video.votes.down_votes.count
+        h5 Descsciption:
+        span= @video.desc
+      .video-info
+    .col-md-12
+     h3 Comments
+     hr

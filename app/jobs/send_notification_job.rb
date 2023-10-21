@@ -1,8 +1,13 @@
 class SendNotificationJob < ApplicationJob
   queue_as :default
 
-  def perform(current_user, video_title)
-    # ActionCable.server.broadcast("notifications_user_#{current_user.id}", "#{video_title} được chia sẻ bởi #{current_user.email}")
-    ActionCable.server.broadcast('notifications_channel', "#{video_title} được chia sẻ bởi #{current_user.email}")
+  def perform(current_user, video)
+    ActionCable.server.broadcast('notifications_channel',
+      info: {
+        video_title: video.title,
+        email: current_user.email,
+        video_detail_path: "/videos/#{video.id}"
+      }
+    )
   end
 end
