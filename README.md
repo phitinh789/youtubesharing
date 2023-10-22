@@ -42,6 +42,8 @@ rails db:migrate
 **5. Start the Application**
 ```
 rails server
+redis-server
+sidekiq
 ```
 Go to http://localhost:3000 in your web browser to see the app
 
